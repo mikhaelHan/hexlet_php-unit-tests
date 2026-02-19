@@ -16,4 +16,3 @@ $name = trim(fgets(STDIN));
 $user = new Php\Package\User($name);
 
 var_dump($user);
-
