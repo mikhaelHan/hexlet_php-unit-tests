@@ -14,12 +14,15 @@
   "description": "hexlet php-package",
   "license": "MIT",
   "scripts": {
-    "test": "phpunit tests"
+    "test": "composer exec --verbose phpunit tests"
   },
   "autoload": {
     "psr-4": {
       "Php\\Package\\": "src"
-    }
+    },
+    "files": [
+      "src/Utils.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
