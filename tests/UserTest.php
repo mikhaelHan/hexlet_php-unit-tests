@@ -17,3 +17,4 @@ class UserTest extends TestCase
         $this->assertEquals(collect($children), $user->getChildren());
     }
 }
+//"coverage": "php -d xdebug.mode=coverage vendor/bin/phpunit tests --coverage-text"//

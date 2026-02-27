@@ -14,14 +14,17 @@
   "description": "hexlet php-package",
   "license": "MIT",
   "scripts": {
-    "test": "composer exec --verbose phpunit tests"
+    "test": "composer exec --verbose phpunit tests",
+    "coverage": "php -d xdebug.mode=coverage vendor/bin/phpunit tests --coverage-text",
+    "coverage-img": "php -d xdebug.mode=coverage vendor/bin/phpunit tests --coverage-html coverage"
   },
   "autoload": {
     "psr-4": {
       "Php\\Package\\": "src"
     },
     "files": [
-      "src/Utils.php"
+      "src/Utils.php",
+      "src/Time.php"
     ]
   },
   "autoload-dev": {
