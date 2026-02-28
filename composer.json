@@ -24,7 +24,8 @@
     },
     "files": [
       "src/Utils.php",
-      "src/Time.php"
+      "src/Time.php",
+      "src/Tdd.php"
     ]
   },
   "autoload-dev": {
