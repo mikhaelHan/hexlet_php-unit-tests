@@ -4,10 +4,11 @@ namespace Hexlet\Phpunit\Tests;
 
 use PHPUnit\Framework\TestCase;
 use function Hexlet\Phpunit\Utils\reverseString;
+use function Hexlet\Phpunit\Utils\toHtmlList;
 
 class UtilsTest extends TestCase
 {
-  public function testReverse(): void
+  public function testReverseString(): void
   {
     $this->assertEquals('', reverseString(''));
     $this->assertEquals('olleh', reverseString('hello'));
@@ -30,6 +31,28 @@ class UtilsTest extends TestCase
     $actual = reverseString($input);
 
     $this->assertEquals($expected, $actual);
+  }
+
+  private $expected;
+  protected function setUp(): void
+  {
+    $this->expected = $this->getFixtureFullPath('result.html');
+  }
+
+  public function testTranslateToHtmlListWithCsv(): void
+  {
+    $path = $this->getFixtureFullPath('list.csv');
+    $actual = toHtmlList($path);
+
+    $this->assertStringEqualsFile($this->expected, $actual);
+  }
+
+  public function testTranslateToHtmlListWithJson(): void
+  {
+    $path = $this->getFixtureFullPath('list.json');
+    $actual = toHtmlList($path);
+
+    $this->assertStringEqualsFile($this->expected, $actual);
   }
 }
 
