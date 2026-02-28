@@ -12,6 +12,25 @@ class UtilsTest extends TestCase
     $this->assertEquals('', reverseString(''));
     $this->assertEquals('olleh', reverseString('hello'));
   }
+
+  private function getFixtureFullPath(string $fixtureName): string
+  {
+    $parts = [__DIR__, 'fixtures', $fixtureName];
+    return realpath(implode('/', $parts));
+  }
+
+  public function testReverseLongString(): void
+  {
+    $beforePath = $this->getFixtureFullPath('before.txt');
+    $input = file_get_contents($beforePath);
+
+    $afterPath = $this->getFixtureFullPath('after.txt');
+    $expected = file_get_contents($afterPath);
+
+    $actual = reverseString($input);
+
+    $this->assertEquals($expected, $actual);
+  }
 }
 
 // --------------------for Arrays-------------------- //

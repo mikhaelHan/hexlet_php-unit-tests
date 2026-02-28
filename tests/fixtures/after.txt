@@ -1,0 +1,5 @@
+Fixtures can be images, JSON and XML files,
+database records, and much more.
+Sometimes fixtures can also contain code, but this is quite rare.
+Such fixtures are needed when testing various code analyzers,
+such as Psalm or PHPStan.

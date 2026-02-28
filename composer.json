@@ -25,7 +25,8 @@
     "files": [
       "src/Utils.php",
       "src/Time.php",
-      "src/Tdd.php"
+      "src/Tdd.php",
+      "src/Fixture.php"
     ]
   },
   "autoload-dev": {
